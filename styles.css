@@ -111,11 +111,24 @@ h1 { margin: 0; max-width: 690px; font-size: clamp(58px, 5.2vw, 84px); line-heig
 .section-heading h2, .calculator-copy h2, .process-section h2, .cta-section h2 { margin: 0; font-size: clamp(42px, 5vw, 72px); line-height: .98; letter-spacing: -3.5px; }
 .section-heading > span { display: block; max-width: 650px; margin-top: 25px; color: var(--muted); font-size: 18px; line-height: 1.6; }
 .service-grid { margin-top: 72px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.service-grid article { min-height: 300px; padding: 30px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 16px; background: #fff; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.service-grid article { min-height: 510px; padding: 30px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 16px; background: #fff; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .service-grid article:hover { transform: translateY(-7px); box-shadow: 0 22px 50px rgba(25,27,30,.09); border-color: #d0d1cf; }
 .service-grid i { color: var(--red); font-size: 12px; font-weight: 900; font-style: normal; }
-.service-grid b { margin-top: auto; font-size: 23px; letter-spacing: -.8px; }
+.service-grid > article > b { margin-top: 42px; font-size: 23px; letter-spacing: -.8px; }
 .service-grid p { margin: 16px 0 0; color: var(--muted); line-height: 1.6; }
+.service-grid ul { margin: 23px 0 26px; padding: 20px 0 0; list-style: none; border-top: 1px solid var(--line); }
+.service-grid li { position: relative; margin: 0 0 12px; padding-left: 20px; color: #52565b; font-size: 13px; line-height: 1.45; }
+.service-grid li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--red); font-weight: 900; }
+.service-outcome { margin-top: auto; padding: 17px 18px; border-left: 3px solid var(--red); border-radius: 0 8px 8px 0; background: #f7f7f5; }
+.service-outcome span, .service-outcome strong { display: block; }
+.service-outcome span { color: var(--red); font-size: 9px; font-weight: 900; letter-spacing: .9px; text-transform: uppercase; }
+.service-outcome strong { margin-top: 6px; font-size: 13px; line-height: 1.4; }
+.manager-proof { margin-top: 18px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 14px; background: #191b1e; overflow: hidden; }
+.manager-proof div { padding: 24px 28px; border-right: 1px solid #35383d; }
+.manager-proof div:last-child { border-right: 0; }
+.manager-proof span, .manager-proof b { display: block; }
+.manager-proof span { color: #ef424b; font-size: 9px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+.manager-proof b { margin-top: 8px; color: #fff; font-size: 13px; line-height: 1.4; }
 
 .calculator-section { padding: 120px max(40px, calc((100vw - 1400px) / 2)); background: #181a1d; color: #fff; display: grid; grid-template-columns: .78fr 1.1fr .92fr; gap: 28px; align-items: stretch; }
 .calculator-copy { padding: 30px 30px 30px 0; }
@@ -259,7 +272,10 @@ footer > span { text-align: right; }
   .vehicle-head span:last-child, .vehicle-row > span:last-child { display: none; }
   .services-section { padding: 90px 20px; }
   .service-grid { grid-template-columns: 1fr; margin-top: 45px; }
-  .service-grid article { min-height: 230px; }
+  .service-grid article { min-height: 0; }
+  .manager-proof { grid-template-columns: 1fr; }
+  .manager-proof div { border-right: 0; border-bottom: 1px solid #35383d; }
+  .manager-proof div:last-child { border-bottom: 0; }
   .calculator-section { padding: 85px 20px; grid-template-columns: 1fr; }
   .calculator-copy { padding: 0; }
   .calculator-card, .results-card { padding: 24px 20px; }
