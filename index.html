@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Onsite Tire Co. mobile fleet tire service and fleet savings calculator.">
+  <title>Fleet Advantage | Onsite Tire Co.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site loaded">
+    <header class="nav-shell">
+      <a class="brand" href="#top">Onsite Tire Co<span>.</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation"><a href="#services">Fleet Services</a><a href="#how-it-works">How It Works</a><a href="#calculator">Savings Calculator</a></nav>
+      <div class="nav-actions"><a class="phone" href="tel:+16156002092"><span>●</span> 615-600-2092</a><a class="button button-small" href="#walkthrough">Get Started <span>→</span></a></div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="skyline" aria-hidden="true"><i class="tower tower-one"></i><i class="tower tower-two"></i><i class="tower tower-three"></i><i class="tower tower-four"></i></div>
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> Nashville's mobile fleet tire partner</div>
+        <h1>Your Fleet Doesn't Have Time for the Tire Shop<span>.</span></h1>
+        <p>Mobile fleet tire service at your yard or jobsite—built to reduce downtime and keep every vehicle moving.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#calculator">Calculate Fleet Savings <span>→</span></a><a class="button button-secondary" href="#walkthrough">Book a Fleet Walkthrough <span>→</span></a></div>
+        <div class="trust-row"><div><b>24/7</b><span>Scheduling available</span></div><div><b>On-site</b><span>At your yard or jobsite</span></div><div><b>Regional</b><span>TN · KY · North AL</span></div></div>
+      </div>
+      <div class="dashboard-wrap">
+        <article class="dashboard-card">
+          <div class="dash-head"><div><p>Fleet Savings Overview</p><span class="live"><i></i> Live estimate</span></div><button type="button">Annual estimate⌄</button></div>
+          <div class="savings-top"><div class="savings-number"><span>Estimated annual savings*</span><strong data-total>$42,624</strong><small>↑ based on <span data-fleet-copy>24</span> fleet vehicles</small></div><div class="chart"><div class="chart-grid"><i></i><i></i><i></i></div><svg viewBox="0 0 520 120" aria-label="Projected savings trend"><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#df121d" stop-opacity=".22"></stop><stop offset="100%" stop-color="#df121d" stop-opacity="0"></stop></linearGradient></defs><polygon points="0,120 0,92 47,86 95,88 142,79 189,69 236,66 284,61 331,46 378,52 425,39 473,34 520,18 520,120" fill="url(#fill)"></polygon><polyline points="0,92 47,86 95,88 142,79 189,69 236,66 284,61 331,46 378,52 425,39 473,34 520,18" fill="none" stroke="#df121d" stroke-width="4" stroke-linecap="round"></polyline></svg><div class="chart-labels"><span>Now</span><span>Q2</span><span>Q3</span><span>Year 1</span></div></div></div>
+          <div class="metric-grid"><div class="metric active"><span class="metric-icon">◷</span><p>Downtime avoided</p><strong><span data-hours>528</span> <small>hrs</small></strong><em>Across the fleet</em></div><div class="metric"><span class="metric-icon">✓</span><p>Fleet availability</p><strong><span data-availability>96</span><small>%</small></strong><em>Projected uptime</em></div><div class="metric"><span class="metric-icon">$</span><p>Operational impact</p><strong data-event-value>$444</strong><em>Potential value per event</em></div></div>
+          <div class="availability"><div><span>Fleet availability</span><b><span data-availability>96</span>%</b></div><div class="progress"><i data-progress></i></div></div>
+          <div class="vehicles"><div class="vehicle-head"><span>Recent fleet activity</span><span>Status</span><span>Service</span><span>Timing</span></div><div class="vehicle-row"><b>Unit 1047<small>Ford Transit</small></b><span class="status in-progress">● In progress</span><span>Steer tires (2)</span><span>Now</span></div><div class="vehicle-row"><b>Unit 2219<small>Ford F-550</small></b><span class="status complete">● Completed</span><span>Air leak repair</span><span>32 min</span></div><div class="vehicle-row"><b>Unit 3358<small>Freightliner</small></b><span class="status scheduled">● Scheduled</span><span>Drive tires (6)</span><span>Tomorrow</span></div></div>
+          <p class="estimate-note">*Planning projection. Adjust the estimate below for your fleet.</p>
+        </article>
+      </div>
+      <img class="fleet-truck" src="fleet-truck.png" alt="White Onsite Tire Co. mobile service box truck">
+    </section>
+
+    <section class="services-section" id="services"><div class="section-heading"><p class="section-kicker">Built for working fleets</p><h2>Tire service that works around your operation.</h2><span>From scheduled replacements to urgent repairs, Onsite Tire Co. brings the tire shop directly to your vehicles.</span></div><div class="service-grid"><article><i>01</i><b>Fleet Tire Installation</b><p>Replace tires at your yard on a schedule that keeps routes, crews, and jobs moving.</p></article><article><i>02</i><b>Repairs & Replacements</b><p>Handle flats, damaged tires, and routine wear without sending vehicles across town.</p></article><article><i>03</i><b>Preventive Fleet Support</b><p>Stay ahead of tire issues with coordinated service built around your fleet calendar.</p></article></div></section>
+
+    <section class="calculator-section" id="calculator">
+      <div class="calculator-copy"><p class="section-kicker">Fleet Savings Calculator</p><h2>See what downtime is really costing your fleet.</h2><p>Adjust the numbers to match your operation. This estimate focuses on productive time and transportation costs that mobile service may help recover.</p><div class="formula-note"><b>What this measures</b><span>Labor time recovered + estimated vehicle transport impact</span></div></div>
+      <div class="calculator-card">
+        <div class="range-field"><label for="fleet-size"><span>Fleet size</span><output id="fleet-output">24 vehicles</output></label><input id="fleet-size" type="range" min="5" max="150" step="1" value="24"><div><span>5</span><span>150</span></div></div>
+        <div class="range-field"><label for="events"><span>Tire service events</span><output id="events-output">4 / vehicle / year</output></label><input id="events" type="range" min="1" max="10" step="1" value="4"><div><span>1</span><span>10</span></div></div>
+        <div class="range-field"><label for="labor"><span>Loaded labor cost</span><output id="labor-output">$68 / hour</output></label><input id="labor" type="range" min="25" max="150" step="1" value="68"><div><span>$25</span><span>$150</span></div></div>
+        <div class="range-field"><label for="downtime"><span>Average off-site downtime</span><output id="downtime-output">6 hours / event</output></label><input id="downtime" type="range" min="1" max="12" step="0.5" value="6"><div><span>1 hr</span><span>12 hrs</span></div></div>
+      </div>
+      <aside class="results-card" aria-live="polite"><span>Potential annual operational savings</span><strong data-total>$42,624</strong><p>That's about <b><span data-weekly>10</span> productive hours</b> returned to your fleet every week.</p><div class="result-breakdown"><div><span>Annual service events</span><b data-events>96</b></div><div><span>Downtime avoided</span><b><span data-hours>528</span> hrs</b></div><div><span>Labor time value</span><b data-labor-value>$35,904</b></div><div><span>Transport impact</span><b data-transport-value>$6,720</b></div></div><button class="button results-button" id="download-estimate" type="button">Download estimate summary <span>→</span></button><small>Planning estimate only. Actual results vary by fleet, route, vehicle, service mix, and scheduling.</small></aside>
+    </section>
+
+    <section class="process-section" id="how-it-works"><div class="section-heading light"><p class="section-kicker">Simple by design</p><h2>Keep the fleet parked. We'll bring the tire shop.</h2></div><div class="process-grid"><article><span>01</span><b>Walk the fleet</b><p>We learn your vehicles, tire needs, service windows, and operating schedule.</p></article><article><span>02</span><b>Build the plan</b><p>You get a practical service approach designed around your yard and workflow.</p></article><article><span>03</span><b>We come to you</b><p>Our mobile team handles service on-site so your vehicles stay where they work.</p></article></div></section>
+
+    <section class="cta-section" id="walkthrough"><img src="fleet-truck.png" alt="Onsite Tire Co. white mobile tire service truck"><div><p class="section-kicker">Ready when your fleet is</p><h2>Let's build a tire plan around your operation.</h2><p>Call Onsite Tire Co. or visit our website to schedule a fleet conversation.</p></div><div class="cta-actions"><a class="button button-primary" href="tel:+16156002092">Call 615-600-2092 <span>→</span></a><a class="button button-secondary" href="https://www.onsitetireco.com" target="_blank" rel="noreferrer">Visit onsitetireco.com <span>→</span></a></div></section>
+    <footer><a class="brand" href="#top">Onsite Tire Co<span>.</span></a><p>Mobile tire service for Nashville and fleets across Tennessee, Kentucky, and Northern Alabama.</p><span>© 2026 Onsite Tire Co.</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
