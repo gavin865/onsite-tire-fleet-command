@@ -301,6 +301,67 @@ footer > span { text-align: right; }
   footer > span { text-align: left; }
 }
 
+/* Night Shift Command */
+.night-command { background: #08090a; color: #f2f0eb; }
+.night-command .nav-shell { position: absolute; z-index: 20; border-color: #2d3033; background: rgba(7,8,9,.9); backdrop-filter: blur(14px); }
+.night-command .brand { color: #f4f2ed; font-family: Impact, "Arial Narrow", sans-serif; font-size: 27px; letter-spacing: 2px; text-transform: uppercase; }
+.night-command .desktop-nav a, .night-command .phone { color: #a7aaad; }
+.night-command .button-small { border-color: var(--red); background: var(--red); color: #fff; }
+.command-hero { min-height: 1010px; padding-top: 138px; overflow: hidden; background: radial-gradient(circle at 72% 14%, #333d45 0, #161a1d 18%, #08090a 47%), #08090a; }
+.command-hero::before { content: ""; position: absolute; inset: 0; opacity: .15; background-image: linear-gradient(#74797d22 1px, transparent 1px), linear-gradient(90deg, #74797d22 1px, transparent 1px); background-size: 34px 34px; mask-image: linear-gradient(90deg, #000, transparent 70%); }
+.command-hero::after { content: ""; position: absolute; width: 390px; height: 720px; top: -330px; right: 24%; transform: rotate(8deg); background: linear-gradient(180deg, rgba(255,255,255,.56), rgba(184,210,227,.09) 55%, transparent); filter: blur(28px); clip-path: polygon(44% 0, 58% 0, 100% 100%, 0 100%); opacity: .45; }
+.command-copy { z-index: 5; max-width: 650px; }
+.command-copy .eyebrow { color: #ff2430; font-family: Impact, "Arial Narrow", sans-serif; font-size: 17px; letter-spacing: 2px; text-transform: uppercase; }
+.command-copy h1 { max-width: 650px; margin: 20px 0; color: #f1efe9; font-family: Impact, "Arial Narrow", sans-serif; font-size: clamp(68px, 7.5vw, 116px); line-height: .84; letter-spacing: -2px; text-transform: uppercase; text-shadow: 0 4px 22px #000; }
+.command-copy > p { max-width: 580px; color: #a6a9ac; font-size: 17px; line-height: 1.65; }
+.command-savings { margin: 31px 0 24px; padding-left: 18px; border-left: 4px solid var(--red); }
+.command-savings > span, .command-savings strong, .command-savings small { display: block; }
+.command-savings > span { color: #aaa; font-size: 10px; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; }
+.command-savings strong { margin: 5px 0; color: #ed111c; font-family: Impact, "Arial Narrow", sans-serif; font-size: clamp(58px, 6vw, 90px); line-height: .95; letter-spacing: 1px; }
+.command-savings small { color: #777b7e; font-size: 9px; text-transform: uppercase; }
+.command-copy .hero-actions { gap: 10px; }
+.command-copy .button { min-height: 59px; border-radius: 2px; font-weight: 900; letter-spacing: .35px; text-transform: uppercase; }
+.command-copy .button-primary { background: linear-gradient(90deg, #cf0711, #f31521); box-shadow: 0 0 34px rgba(226,18,29,.22); }
+.command-copy .button-secondary { border-color: #4a4d50; color: #e8e6e1; background: rgba(8,9,10,.65); }
+.command-copy .trust-row { border-color: #33363a; }
+.command-copy .trust-row b { color: #f0eee9; }
+.command-copy .trust-row span { color: #777b7e; }
+.command-dashboard { z-index: 4; filter: drop-shadow(0 35px 45px #000); }
+.command-dashboard .dashboard-card { border-color: #373a3e; background: linear-gradient(145deg, rgba(26,28,31,.97), rgba(9,10,11,.98)); color: #efede8; }
+.command-dashboard .dash-head, .command-dashboard .metric-grid, .command-dashboard .availability, .command-dashboard .vehicle-row, .command-dashboard .vehicle-head { border-color: #34373a; }
+.command-dashboard .dash-head p, .command-dashboard .metric p, .command-dashboard .metric strong, .command-dashboard .availability b, .command-dashboard .vehicle-row b { color: #efede8; }
+.command-dashboard .savings-number strong { font-family: Impact, "Arial Narrow", sans-serif; font-size: 62px; color: #ef111d; letter-spacing: 1px; }
+.command-dashboard .metric { background: #121416; border-color: #34373a; }
+.command-dashboard .metric.active { border-color: #ef1924; background: #181012; }
+.command-dashboard .vehicles { background: #0b0c0d; }
+.command-dashboard .chart-grid i { border-color: #303337; }
+.command-hero > .fleet-truck { width: min(64vw, 1000px); right: -7vw; bottom: 10px; filter: brightness(.68) contrast(1.2) drop-shadow(0 32px 28px #000); mix-blend-mode: screen; }
+.night-command .services-section { max-width: none; background: #0d0f11; }
+.night-command .section-heading h2 { color: #f3f1ec; font-family: Impact, "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: .4px; }
+.night-command .section-heading > span, .night-command .service-grid p { color: #909397; }
+.night-command .service-grid article { border-color: #2d3033; background: linear-gradient(145deg, #17191b, #101113); color: #f0eee9; }
+.night-command .service-grid article:hover { border-color: #e3131e; box-shadow: 0 24px 60px rgba(0,0,0,.36); }
+.night-command .service-grid ul { border-color: #303336; }
+.night-command .service-grid li { color: #b4b6b8; }
+.night-command .service-outcome { background: #090a0b; }
+.night-command .calculator-section { background: radial-gradient(circle at 100% 0, #2a1116, #111315 40%); }
+.night-command .calculator-card, .night-command .savings-chart-card { border: 1px solid #34373a; }
+.night-command .process-section { background: #08090a; }
+.night-command .cta-section { background: linear-gradient(115deg, #17191b, #090a0b); }
+.night-command footer { border-color: #2e3033; background: #070809; }
+@media (max-width: 1150px) {
+  .command-copy h1 { font-size: 72px; }
+  .command-copy > p { font-size: 14px; }
+  .command-dashboard { transform: scale(.94); transform-origin: center right; }
+}
+@media (max-width: 760px) {
+  .command-hero { min-height: 1470px; padding-top: 112px; }
+  .command-copy h1 { font-size: 56px; }
+  .command-copy .hero-actions { flex-direction: column; }
+  .command-dashboard { margin-top: 42px; transform: none; }
+  .command-hero > .fleet-truck { bottom: 0; right: -30%; width: 128%; opacity: .56; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
