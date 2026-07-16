@@ -39,6 +39,23 @@
     setAll("[data-q1]", money.format(annualSavings * 0.25));
     setAll("[data-midyear]", money.format(annualSavings * 0.5));
 
+    const onsiteHours = 0.5;
+    const eventHoursSaved = Math.max(downtimeHours - onsiteHours, 0);
+    const annualOffsitePerTruck = downtimeHours * eventRate;
+    const annualOnsitePerTruck = onsiteHours * eventRate;
+    const annualHoursSavedPerTruck = eventHoursSaved * eventRate;
+    const formatHours = (value) => `${Number.isInteger(value) ? value : value.toFixed(1)} ${value === 1 ? "hr" : "hrs"}`;
+    setAll("[data-event-offsite]", formatHours(downtimeHours));
+    setAll("[data-event-saved]", formatHours(eventHoursSaved));
+    setAll("[data-year-offsite]", formatHours(annualOffsitePerTruck));
+    setAll("[data-year-onsite]", formatHours(annualOnsitePerTruck));
+    setAll("[data-year-saved]", formatHours(annualHoursSavedPerTruck));
+    const downtimeScale = Math.max(annualOffsitePerTruck, downtimeHours, 1);
+    document.querySelector("[data-event-offsite-bar]").style.height = `${Math.max(10, (downtimeHours / downtimeScale) * 100)}%`;
+    document.querySelector("[data-event-onsite-bar]").style.height = `${Math.max(8, (onsiteHours / downtimeScale) * 100)}%`;
+    document.querySelector("[data-year-offsite-bar]").style.height = `${Math.max(10, (annualOffsitePerTruck / downtimeScale) * 100)}%`;
+    document.querySelector("[data-year-onsite-bar]").style.height = `${Math.max(8, (annualOnsitePerTruck / downtimeScale) * 100)}%`;
+
     const laborPercent = annualSavings ? Math.round((laborSavings / annualSavings) * 100) : 0;
     const transportPercent = 100 - laborPercent;
     setAll("[data-labor-percent]", `${laborPercent}%`);
