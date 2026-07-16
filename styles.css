@@ -175,6 +175,22 @@ h1 { margin: 0; max-width: 690px; font-size: clamp(58px, 5.2vw, 84px); line-heig
 .donut-chart > div { position: absolute; inset: 30%; z-index: 1; display: grid; place-content: center; text-align: center; }
 .donut-chart span { color: #85898e; font-size: 9px; }
 .donut-chart b { margin-top: 4px; font-size: 17px; letter-spacing: -.5px; }
+.downtime-card { grid-column: 1 / -1; min-height: 410px; }
+.downtime-key { display: flex; gap: 18px; color: #73777c; font-size: 10px; font-weight: 800; }
+.downtime-key span { display: flex; align-items: center; gap: 7px; }
+.downtime-key i { width: 10px; height: 10px; border-radius: 3px; }
+.offsite-key { background: #24272b; }
+.onsite-key { background: var(--red); }
+.downtime-groups { height: 285px; margin-top: 28px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 52px; border-bottom: 1px solid var(--line); }
+.downtime-group { min-width: 0; display: grid; grid-template-rows: 1fr auto auto; text-align: center; }
+.downtime-bars { min-height: 190px; display: flex; align-items: end; justify-content: center; gap: 18px; }
+.downtime-bars i { position: relative; width: min(88px, 34%); min-height: 24px; border-radius: 8px 8px 2px 2px; transition: height .25s ease; }
+.downtime-bars i > b { position: absolute; left: 50%; top: -25px; transform: translateX(-50%); white-space: nowrap; color: var(--ink); font-size: 12px; font-style: normal; }
+.downtime-bars .offsite-bar { background: #24272b; }
+.downtime-bars .onsite-bar { background: linear-gradient(180deg, #ef3640, var(--red)); }
+.downtime-group > span { margin-top: 13px; font-size: 13px; font-weight: 900; }
+.downtime-group > small { margin: 5px 0 15px; color: #85898e; font-size: 10px; }
+.downtime-group > small b { color: var(--red); }
 .donut-legend { display: grid; gap: 22px; }
 .donut-legend > div { display: grid; grid-template-columns: 12px 1fr; gap: 10px; align-items: start; }
 .donut-legend i { width: 10px; height: 10px; margin-top: 3px; border-radius: 50%; }
@@ -251,6 +267,9 @@ footer > span { text-align: right; }
   .email-results-panel > div { grid-template-columns: 1fr; }
   .email-results-panel input { min-height: 44px; }
   .savings-chart-card { padding: 24px 18px; min-height: 340px; }
+  .downtime-key { flex-direction: column; gap: 5px; }
+  .downtime-groups { gap: 18px; }
+  .downtime-bars { gap: 9px; }
   .monthly-bars { gap: 4px; padding: 0 3px; }
   .month-labels { gap: 3px; padding-left: 1px; padding-right: 1px; }
   .month-labels span:nth-child(even) { visibility: hidden; }
