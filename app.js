@@ -36,7 +36,26 @@
     setAll("[data-labor-value]", money.format(laborSavings));
     setAll("[data-transport-value]", money.format(transportSavings));
     document.querySelector("[data-progress]").style.width = `${availability}%`;
-    return { fleetSize, annualEvents, hoursSaved, annualSavings };
+    setAll("[data-q1]", money.format(annualSavings * 0.25));
+    setAll("[data-midyear]", money.format(annualSavings * 0.5));
+
+    const laborPercent = annualSavings ? Math.round((laborSavings / annualSavings) * 100) : 0;
+    const transportPercent = 100 - laborPercent;
+    setAll("[data-labor-percent]", `${laborPercent}%`);
+    setAll("[data-transport-percent]", `${transportPercent}%`);
+    document.getElementById("savings-donut").style.background = `conic-gradient(var(--red) 0 ${laborPercent}%, #f4a3a8 ${laborPercent}% 100%)`;
+
+    const bars = document.getElementById("monthly-bars");
+    bars.innerHTML = "";
+    for (let month = 1; month <= 12; month += 1) {
+      const cumulative = Math.round((annualSavings * month) / 12);
+      const bar = document.createElement("i");
+      bar.style.height = `${Math.max(8, (month / 12) * 100)}%`;
+      bar.setAttribute("aria-label", `Month ${month}: ${money.format(cumulative)} cumulative savings`);
+      bar.innerHTML = `<span>${money.format(cumulative)}</span>`;
+      bars.appendChild(bar);
+    }
+    return { fleetSize, annualEvents, hoursSaved, laborSavings, transportSavings, annualSavings };
   }
 
   [fleet, events, labor, downtime].forEach((input) => input.addEventListener("input", estimate));
@@ -49,6 +68,23 @@
     link.download = "onsite-tire-fleet-estimate.txt";
     link.click();
     URL.revokeObjectURL(url);
+  });
+  const emailTab = document.getElementById("email-results-tab");
+  const emailPanel = document.getElementById("email-results-panel");
+  emailTab.addEventListener("click", () => {
+    const willOpen = emailPanel.hidden;
+    emailPanel.hidden = !willOpen;
+    emailTab.setAttribute("aria-expanded", String(willOpen));
+    if (willOpen) document.getElementById("results-email").focus();
+  });
+  emailPanel.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const result = estimate();
+    const recipient = document.getElementById("results-email").value.trim();
+    if (!recipient) return;
+    const subject = "My Onsite Tire Co. Fleet Savings Estimate";
+    const body = `Onsite Tire Co. Fleet Savings Estimate\n\nFleet size: ${result.fleetSize} vehicles\nAnnual tire events: ${result.annualEvents}\nDowntime avoided: ${result.hoursSaved} hours\nRecovered labor value: ${money.format(result.laborSavings)}\nTransport impact: ${money.format(result.transportSavings)}\nPotential annual operational savings: ${money.format(result.annualSavings)}\n\nPlanning estimate only. Actual results vary by fleet, route, vehicle, service mix, and scheduling.\n\nOnsite Tire Co. | 615-600-2092 | onsitetireco.com`;
+    window.location.href = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
   estimate();
 })();
